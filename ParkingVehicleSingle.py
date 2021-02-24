@@ -149,17 +149,17 @@ class ParkingVehicle():
 	# def parking area ?
 	def _parking_place(self):
 		place = np.array([
-			[                      -15.,                    0.],
-			[-self.scalex * .5 * self.f,                    0.],
+			[                      -15.,                    0.], # what is 15?
+			[-self.scalex * .5 * self.f,                    0.], # 
 			[-self.scalex * .5 * self.f, -self.scaley * self.d],
 			[ self.scalex * .5 * self.f, -self.scaley * self.d],
 			[ self.scalex * .5 * self.f,                    0.],
 			[                       15.,                    0.],
 		])
-		place += np.array([[0., 5.]])
+		place += np.array([[0., 5.]]) # why 6 rows?
 		return place
 		
-	# for what ?
+	# for what? drawing border?
 	def _border_fcn(self, x):
 		return -self.scaley * self.d * (np.sign(x + self.scalex * .5 * self.f) - 
 		np.sign(x - self.scalex * .5 * self.f)) / 2. + 5.
